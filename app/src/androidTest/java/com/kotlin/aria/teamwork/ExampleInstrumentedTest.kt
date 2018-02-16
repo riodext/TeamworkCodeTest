@@ -1,4 +1,4 @@
-package com.kotlin.aria.teamwork_code_test
+package com.kotlin.aria.teamwork
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

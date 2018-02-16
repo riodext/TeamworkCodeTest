@@ -1,7 +1,7 @@
-package com.kotlin.aria.teamwork_code_test
+package com.kotlin.aria.teamwork
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 

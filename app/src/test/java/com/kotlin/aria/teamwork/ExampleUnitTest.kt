@@ -1,4 +1,4 @@
-package com.kotlin.aria.teamwork_code_test
+package com.kotlin.aria.teamwork
 
 import org.junit.Test
 
