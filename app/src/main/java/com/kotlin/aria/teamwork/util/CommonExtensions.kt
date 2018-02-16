@@ -1,5 +1,6 @@
-package com.kotlin.aria.teamwork
+package com.kotlin.aria.teamwork.util
 
+import android.support.v7.widget.RecyclerView
 import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
@@ -30,3 +31,14 @@ val currentDate = Calendar.getInstance().time.toString()
 
 fun ClosedRange<Int>.random() =
         Random().nextInt(endInclusive - start) +  start
+
+fun View.visible() {
+    visibility = View.VISIBLE
+}
+
+fun View.gone() {
+    visibility = View.GONE
+}
+
+fun RecyclerView.sethasFixedSizeToFalse() =
+        setHasFixedSize(false)

@@ -4,12 +4,12 @@ import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
-import com.kotlin.aria.teamwork.inflate
+import com.kotlin.aria.teamwork.util.inflate
 
 /**
  * Created by aria on 07/12/2017.
  */
-abstract class BaseRecyclerViewAdapter<ITEM> constructor(var itemList: MutableList<ITEM>,
+abstract class BaseRecyclerViewAdapter<ITEM> constructor(var itemList: List<ITEM>,
                                                          private val layoutResId: Int)
     : RecyclerView.Adapter<BaseRecyclerViewAdapter.Holder>() {
 
@@ -43,11 +43,6 @@ abstract class BaseRecyclerViewAdapter<ITEM> constructor(var itemList: MutableLi
 
     private fun calculateDiff(newItems: List<ITEM>) =
             DiffUtil.calculateDiff(DiffUtilCallback(itemList, newItems))
-
-    fun add(item: ITEM) {
-        itemList.add(item)
-        notifyItemInserted(itemList.size)
-    }
 
     fun remove(position: Int) {
         itemList.toMutableList().removeAt(position)

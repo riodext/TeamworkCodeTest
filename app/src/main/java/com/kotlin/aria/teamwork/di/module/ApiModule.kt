@@ -1,6 +1,10 @@
 package com.kotlin.aria.teamwork.di.module
 
 import com.kotlin.aria.teamwork.BuildConfig
+import com.kotlin.aria.teamwork.data.typelist.network.ProjectListResponseMapper
+import com.kotlin.aria.teamwork.data.typelist.repositoryimp.network.ProjectListRepositoryNetworkImp
+import com.kotlin.aria.teamwork.data.typelist.repositoryimp.network.service.ProjectListService
+import com.kotlin.aria.teamwork.domain.main.repository.ProjectListRepository
 import dagger.Module
 import dagger.Provides
 import io.reactivex.disposables.CompositeDisposable
@@ -40,7 +44,8 @@ class ApiModule {
         }
         okHttpBuilder.readTimeout(15.toLong(), TimeUnit.SECONDS)
         okHttpBuilder.connectTimeout(15.toLong(), TimeUnit.SECONDS)
-        okHttpBuilder.addInterceptor(AuthInterceptor("yat@triplespin.com", "yatyatyat27"))
+        okHttpBuilder.addInterceptor(
+                AuthInterceptor("yat@triplespin.com", "yatyatyat27"))
 
         return okHttpBuilder
     }
@@ -64,5 +69,21 @@ class ApiModule {
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
     }
+
+    @Singleton
+    @Provides
+    fun provideProjectListRepositoryImp(
+            service: ProjectListService,
+            listMapper: ProjectListResponseMapper): ProjectListRepository =
+                ProjectListRepositoryNetworkImp(service, listMapper)
+
+    @Singleton
+    @Provides
+    fun provideTypeListService(retrofit: Retrofit): ProjectListService =
+            retrofit.create(ProjectListService::class.java)
+
+    @Singleton
+    @Provides
+    fun providesTypeListMapper(): ProjectListResponseMapper = ProjectListResponseMapper()
 
 }

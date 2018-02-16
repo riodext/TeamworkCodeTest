@@ -1,8 +1,8 @@
 package com.kotlin.aria.teamwork.di.component
 
-import com.kotlin.aria.teamwork.MainActivity
 import com.kotlin.aria.teamwork.di.module.ActivityModule
 import com.kotlin.aria.teamwork.di.scope.PerActivity
+import com.kotlin.aria.teamwork.ui.screens.main.activity.MainActivity
 import dagger.Subcomponent
 
 /**

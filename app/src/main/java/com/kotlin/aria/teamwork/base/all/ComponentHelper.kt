@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import com.kotlin.aria.teamwork.App
 import com.kotlin.aria.teamwork.di.component.ActivityComponent
 import com.kotlin.aria.teamwork.di.module.ActivityModule
-import com.kotlin.aria.teamwork.unSafeLazy
+import com.kotlin.aria.teamwork.util.unSafeLazy
 
 /**
  * Created by aria on 11/02/2018.

@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Teamwork_code_test</string>
+    <string name="app_name">TeamworkCodeTest</string>
+    <string name="no_projects_available">No projects available</string>
+    <string name="error_projects_list">Error getting projects!</string>
 </resources>

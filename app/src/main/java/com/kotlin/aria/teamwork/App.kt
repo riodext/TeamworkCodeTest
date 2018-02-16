@@ -4,6 +4,7 @@ import android.app.Application
 import com.kotlin.aria.teamwork.di.component.ApplicationComponent
 import com.kotlin.aria.teamwork.di.component.DaggerApplicationComponent
 import com.kotlin.aria.teamwork.di.module.ApplicationModule
+import com.kotlin.aria.teamwork.util.unSafeLazy
 
 
 /**
